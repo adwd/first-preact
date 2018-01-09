@@ -1,15 +1,16 @@
 import { h, render, Component } from 'preact'
+import Clock from './components/Clock'
 
-class Clock extends Component {
+class App extends Component {
   render() {
     let time = new Date().toLocaleTimeString()
     return (
       <div>
-        <p>time is</p>
-        <span>{time}</span>
+        <h1>My Preact app</h1>
+        <Clock time={time} />
       </div>
     )
   }
 }
 
-render(<Clock />, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
