@@ -22,6 +22,7 @@
     "css-loader": "^0.28.8",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
@@ -45,7 +46,8 @@
     ],
     "moduleNameMapper": {
       "^react$": "preact-compat",
-      "^react-dom$": "preact-compat"
+      "^react-dom$": "preact-compat",
+      "\\.(css|scss)$": "identity-obj-proxy"
     }
   }
 }
