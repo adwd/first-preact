@@ -3,7 +3,12 @@ import { h, render, Component } from 'preact'
 class Clock extends Component {
   render() {
     let time = new Date().toLocaleTimeString()
-    return <span>{time}</span>
+    return (
+      <div>
+        <p>time is</p>
+        <span>{time}</span>
+      </div>
+    )
   }
 }
 
