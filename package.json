@@ -1,0 +1,30 @@
+{
+  "name": "first-preact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --content-base build",
+    "build": "mkdirp build && ncp src/index.html build/index.html && webpack -p",
+    "prettier": "prettier {src/**/*.js,./prettier.config.js,webpack.config.js} --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-preact": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "prettier": "^1.9.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
+  },
+  "dependencies": {
+    "preact": "^8.2.7"
+  }
+}
