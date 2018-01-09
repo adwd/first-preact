@@ -9,7 +9,9 @@
     "webpack-dev-server": "webpack-dev-server",
     "build": "mkdirp build && NODE_ENV=production webpack -p",
     "prettier": "prettier {src/**/*.js,src/**/*.scss,prettier.config.js,webpack.config.js} --write",
-    "prettier-watch": "onchange '{src/**/*.js,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}"
+    "prettier-watch": "onchange '{src/**/*.js,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}",
+    "deploy": "run-s build deploy:firebase",
+    "deploy:firebase": "firebase deploy"
   },
   "keywords": [],
   "author": "",
