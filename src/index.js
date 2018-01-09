@@ -3,11 +3,11 @@ import Clock from './components/Clock'
 
 class App extends Component {
   render() {
-    let time = new Date().toLocaleTimeString()
+    const date = new Date()
     return (
       <div>
         <h1>My Preact app</h1>
-        <Clock time={time} />
+        <Clock date={date} />
       </div>
     )
   }

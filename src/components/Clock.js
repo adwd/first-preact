@@ -1,12 +1,11 @@
 import { h, render, Component } from 'preact'
 
 export default class Clock extends Component {
-  render({ time }) {
-    console.log(this.props, this.state)
+  render({ date }) {
     return (
       <div>
         <p>time is</p>
-        <span>{time}</span>
+        <span>{date.toLocaleTimeString()}</span>
       </div>
     )
   }
