@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "run-p webpack-dev-server prettier-watch",
     "webpack-dev-server": "webpack-dev-server --content-base build",
     "build": "mkdirp build && ncp src/index.html build/index.html && webpack -p",
@@ -20,6 +20,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-preact": "^1.1.0",
+    "jest": "^22.0.4",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "npm-run-all": "^4.1.2",
