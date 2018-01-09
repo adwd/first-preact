@@ -19,6 +19,6 @@ module.exports = {
   devServer: {
     port: process.env.PORT || 8080,
     host: '0.0.0.0',
-    contentBase: './src',
+    contentBase: path.join(__dirname, "build")
   },
 }

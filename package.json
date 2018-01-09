@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "run-p webpack-dev-server prettier-watch",
-    "webpack-dev-server": "webpack-dev-server --content-base build",
+    "webpack-dev-server": "webpack-dev-server",
     "build": "mkdirp build && ncp src/index.html build/index.html && webpack -p",
     "prettier": "prettier {src/**/*.js,./prettier.config.js,webpack.config.js} --write",
     "prettier-watch": "onchange 'src/**/*.js' -- prettier --write {{changed}}"
@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -28,9 +27,19 @@
     "preact-render-spy": "^1.2.1",
     "prettier": "^1.9.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.0"
+    "webpack-dev-server": "~2.9.7"
   },
   "dependencies": {
-    "preact": "^8.2.7"
+    "preact": "^8.2.7",
+    "preact-compat": "^3.17.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "preact-render-spy/snapshot"
+    ],
+    "moduleNameMapper": {
+      "^react$": "preact-compat",
+      "^react-dom$": "preact-compat"
+    }
   }
 }
