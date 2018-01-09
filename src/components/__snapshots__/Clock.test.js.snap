@@ -5,7 +5,7 @@ preact-render-spy (1 nodes)
 -------
 <div>
   <p>time is</p>
-  <span>11:12:13</span>
+  <span class="clock">11:12:13</span>
 </div>
 
 `;
