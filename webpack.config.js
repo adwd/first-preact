@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
@@ -11,7 +12,7 @@ const extractSass = new ExtractTextPlugin({
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: ENV === 'development' ? 'bundle.js' : 'bundle.[hash].js',
     path: path.resolve(__dirname, 'build'),
   },
   module: {
@@ -45,6 +46,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
       minify: { collapseWhitespace: true },
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(ENV)
     }),
   ],
   devtool: 'source-map',
