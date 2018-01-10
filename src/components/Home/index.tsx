@@ -6,7 +6,7 @@ export default class Home extends Component<{}, {}> {
   render() {
     const date = new Date()
     return (
-      <div class={styles.container}>
+      <div>
         <h1>Home</h1>
         <Clock date={date} />
       </div>

@@ -7,8 +7,8 @@ export default class Header extends Component<{}, {}> {
       <div class={styles.container}>
         <h3>My Preact App</h3>
         <div class={styles.buttons}>
-          <a>Home</a>
-          <a>Data</a>
+          <a href="/">Home</a>
+          <a href="/news">News</a>
         </div>
       </div>
     )

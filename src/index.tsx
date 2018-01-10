@@ -1,7 +1,9 @@
 import { h, render, Component } from 'preact'
+import Router from 'preact-router'
 import Header from './components/Header'
 import Home from './components/Home'
-import './style.scss'
+import News from './components/News'
+import * as styles from './style.scss'
 
 class App extends Component<{}, {}> {
   render() {
@@ -9,7 +11,12 @@ class App extends Component<{}, {}> {
     return (
       <div>
         <Header />
-        <Home />
+        <div class={styles.container}>
+          <Router>
+            <Home path="/" />
+            <News path="/news" />
+          </Router>
+        </div>
       </div>
     )
   }
