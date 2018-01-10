@@ -1,8 +1,8 @@
 import { h, render, Component } from 'preact'
-import styles from './Clock.scss'
+import * as styles from './Clock.scss'
 
-export default class Clock extends Component {
-  render({ date }) {
+export default class Clock extends Component<{ date: Date }, {}> {
+  render({ date }: { date: Date }) {
     return (
       <div>
         <p>time is</p>

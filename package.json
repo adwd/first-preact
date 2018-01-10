@@ -8,8 +8,8 @@
     "dev": "run-p webpack-dev-server prettier-watch",
     "webpack-dev-server": "webpack-dev-server",
     "build": "mkdirp build && NODE_ENV=production webpack -p",
-    "prettier": "prettier {src/**/*.js,src/**/*.scss,prettier.config.js,webpack.config.js} --write",
-    "prettier-watch": "onchange '{src/**/*.js,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}",
+    "prettier": "prettier {src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js} --write",
+    "prettier-watch": "onchange '{src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}",
     "deploy": "run-s build deploy:firebase",
     "deploy:firebase": "firebase deploy"
   },
@@ -35,6 +35,9 @@
     "prettier": "^1.9.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
+    "ts-jest": "^22.0.1",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "~2.9.7"
   },
@@ -43,6 +46,10 @@
     "preact-compat": "^3.17.0"
   },
   "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "snapshotSerializers": [
       "preact-render-spy/snapshot"
     ],
@@ -50,6 +57,14 @@
       "^react$": "preact-compat",
       "^react-dom$": "preact-compat",
       "\\.(css|scss)$": "identity-obj-proxy"
-    }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

@@ -10,17 +10,22 @@ const extractSass = new ExtractTextPlugin({
 })
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     filename: ENV === 'development' ? 'bundle.js' : 'bundle.[hash].js',
     path: path.resolve(__dirname, 'build'),
   },
+  resolve: {
+    extensions: ['.webpack.js', '.ts', '.tsx', '.js'],
+  },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        options: {
+          configFile: 'tsconfig.app.json',
+        },
       },
       {
         test: /\.scss$/,
@@ -48,7 +53,7 @@ module.exports = {
       minify: { collapseWhitespace: true },
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(ENV)
+      'process.env.NODE_ENV': JSON.stringify(ENV),
     }),
   ],
   devtool: 'source-map',
