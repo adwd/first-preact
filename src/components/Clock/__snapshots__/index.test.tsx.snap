@@ -4,7 +4,6 @@ exports[`Clock renders correctly 1`] = `
 preact-render-spy (1 nodes)
 -------
 <div>
-  <p>time is</p>
   <span class="clock">11:12:13</span>
 </div>
 

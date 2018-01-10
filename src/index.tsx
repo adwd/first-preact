@@ -1,16 +1,18 @@
 import { h, render, Component } from 'preact'
-import Clock from './components/Clock'
+import Header from './components/Header'
+import Home from './components/Home'
+import './style.scss'
 
 class App extends Component<{}, {}> {
   render() {
     const date = new Date()
     return (
       <div>
-        <h1>My Preact app</h1>
-        <Clock date={date} />
+        <Header />
+        <Home />
       </div>
     )
   }
 }
 
-render(<App />, document.getElementById('root'))
+render(<App />, document.body)
