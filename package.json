@@ -11,7 +11,8 @@
     "prettier": "prettier {src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js} --write",
     "prettier-watch": "onchange '{src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}",
     "deploy": "run-s build deploy:firebase",
-    "deploy:firebase": "firebase deploy"
+    "deploy:firebase": "firebase deploy",
+    "lighthouse": "lighthouse https://my-preact-app.firebaseapp.com/ --chrome-flags=\"--headless\""
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "html-webpack-plugin": "^2.30.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
+    "lighthouse": "^2.7.0",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "node-sass": "^4.7.2",
