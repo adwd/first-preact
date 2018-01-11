@@ -7,7 +7,6 @@ import * as styles from './style.scss'
 
 class App extends Component<{}, {}> {
   render() {
-    const date = new Date()
     return (
       <div>
         <Header />
