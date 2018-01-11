@@ -1,6 +1,4 @@
 #!/bin/sh
-yarn run lighthouse
-
-mv ./*.report.html lighthouse/
-git add lighthouse
-git commit -m "run lighthouse"
+cd ./assets/images/scores
+npx lighthouse-badges --urls https://my-preact-app.firebaseapp.com/
+cd ../../../
