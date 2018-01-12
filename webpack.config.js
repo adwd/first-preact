@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const workboxPlugin = require('workbox-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 const ENV = process.env.NODE_ENV || 'development'
 
@@ -56,10 +57,17 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(ENV),
     }),
+    new CopyWebpackPlugin([
+      './src/manifest.json',
+      {
+        from: './src/assets/',
+        to: 'assets'
+      }
+    ]),
     new workboxPlugin({
       globDirectory: 'build',
       globPatterns: ['**/*.{html,js,css}'],
-      swDest: './build/sw.js',
+      swDest: 'build/sw.js',
       clientsClaim: true,
       skipWaiting: true,
     }),

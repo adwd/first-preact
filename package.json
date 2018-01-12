@@ -11,7 +11,8 @@
     "prettier": "prettier {src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js} --write",
     "prettier-watch": "onchange '{src/**/*.tsx,src/**/*.scss,prettier.config.js,webpack.config.js}' -- prettier --write {{changed}}",
     "deploy": "run-s build deploy:firebase",
-    "deploy:firebase": "firebase deploy"
+    "deploy:firebase": "firebase deploy",
+    "lighthouse": "lighthouse-badges --urls https://my-preact-app.firebaseapp.com/"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-preact": "^1.1.0",
+    "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.28.8",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",

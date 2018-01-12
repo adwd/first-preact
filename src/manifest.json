@@ -1,0 +1,20 @@
+{
+  "short_name": "My Preact App",
+  "name": "My Preact App",
+  "start_url": "/?launcher=true",
+  "background_color": "#db7093",
+  "theme_color": "#db7093",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/images/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
